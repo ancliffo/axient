@@ -7,4 +7,10 @@ import {Component, Input} from '@angular/core';
 })
 export class ResultComponent {
   @Input() leafResult: string | null = null;
+  showChallengeInput: boolean = false;
+
+  toggleTextArea(e: any) {
+    console.log(e.currentTarget.checked);
+    this.showChallengeInput = e.currentTarget.checked;
+  }
 }

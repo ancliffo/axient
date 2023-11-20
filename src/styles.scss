@@ -12,9 +12,19 @@ html, body {
   background-color: $leafGreen;
   border-color: $leafGreen;
 
+  &.disabled {
+    background-color: $borderColor;
+    border-color: $borderColor;
+  }
+
   &.next {
     padding: 10px 50px 10px 30px;
     position: relative;
+
+    &.disabled {
+      background-color: $borderColor;
+      border-color: $borderColor;
+    }
 
     &:after {
       content: url("assets/icons/leaf_color_checkmark.svg");
@@ -24,13 +34,8 @@ html, body {
       top: -4px;
     }
 
-    &.disabled {
-      background-color: $borderColor;
-      border-color: $borderColor;
-
-      &:after {
-        content: none;
-      }
+    &.disabled:after {
+      content: none;
     }
   }
 }

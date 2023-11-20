@@ -1,6 +1,9 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, NgModule, Output} from '@angular/core';
 import {Questions} from "../../Questions";
 import {answerObj} from "../../answerObj";
+import {ResultComponent} from "../result/result.component";
+import {QuestionComponent} from "../question/question.component";
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-questions',

@@ -8,6 +8,7 @@ import {Questions} from "../../Questions";
 })
 export class FooterComponent {
   @Input() currentQuestion: number;
+  @Input() loading: boolean = false;
   @Input() questions: Questions[] = [];
   @Input() question: Questions = this.questions[0];
   @Output() onPrevQuestion: EventEmitter<Questions> = new EventEmitter();

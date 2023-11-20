@@ -1,5 +1,5 @@
 <footer>
-  <app-button  [style.display]="currentQuestion !== 0 && leafResult === null ? 'block' : 'none'"
+  <app-button [style.display]="currentQuestion !== 0 && leafResult === null ? 'block' : 'none'"
     label="Prev" bsClass="secondary prev"
     (handleButtonClick)="prevQuestion()">
   </app-button>
@@ -17,7 +17,7 @@
     (handleButtonClick)="restart()">
   </app-button>
   <app-button [style.display]="leafResult ? 'block' : 'none'"
-    label="SUBMIT" bsClass="success"
+    label="SUBMIT" bsClass="success {{ loading ? 'disabled' : '' }}"
     (handleButtonClick)="submit()">
   </app-button>
 </footer>

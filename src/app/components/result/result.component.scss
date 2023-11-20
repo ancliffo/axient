@@ -18,14 +18,32 @@
 
   img {
     width: 90%;
-    max-width: 275px;
+    max-width: 190px;
     margin: auto;
   }
 }
 
 .result-form {
+  padding: 20px;
+
   p {
     font-size: 1rem;
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $darkGrey;
+  }
+
+  .challenge-textarea {
+    height: 0;
+    transition: .4s linear;
+    overflow: hidden;
+
+    &.open {
+      height: 185px;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Questions} from "./Questions";
 import {QUESTIONS} from "./mock-questions";
 import {answerObj} from "./answerObj";
@@ -13,7 +13,7 @@ export class AppComponent {
   currentQuestion: number = 0;
   leafResult: string | null = null;
   loading: boolean = false;
-
+  title: string = 'Main Parent Component';
   ngOnInit(): void {
     // console.log('[QUESTIONS Parent]', this.questions);
   }
