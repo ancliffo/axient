@@ -10,7 +10,7 @@
       <div class="form-group col-12 mb-2">
         <label for="inputColor">Color:</label>
         <select id="inputColor" class="form-control">
-          <option selected></option>
+          <option value=""></option>
           <option>Green</option>
           <option>Yellow</option>
           <option>Orange</option>
@@ -24,10 +24,10 @@
       </div>
       <div class="form-group col 12 mb-2">
         <div class="form-check">
-          <label class="form-check-label" for="gridCheck" title="Check this if you think {{ leafResult }} is not the type of leaf you found.">
+          <label class="form-check-label" for="challengeCheck" title="Check this if you think {{ leafResult }} is not the type of leaf you found.">
             Challenge result
           </label>
-          <input class="form-check-input" type="checkbox" id="gridCheck" (change)="toggleTextArea($event)">
+          <input class="form-check-input" type="checkbox" id="challengeCheck" (change)="toggleTextArea($event)">
         </div>
       </div>
       <div class="form-group col-12 challenge-textarea {{ showChallengeInput ? 'open' : 'close' }}">

@@ -26,12 +26,9 @@ export class QuestionComponent {
 
   ngOnInit(): void {
     this.questionOptions = Object.values(this.question.options);
-    console.log('[QUESTION Options]', this.questionOptions);
   }
 
   onUpdateAnswer(e: any) {
-    console.log(e);
-    console.log(e.target.value);
     this.updateAnswer.emit({id: this.question.id, answer: e.target.value});
   }
 }

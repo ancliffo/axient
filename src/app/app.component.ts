@@ -52,10 +52,13 @@ export class AppComponent {
     this.currentQuestion = question.previousQuestion;
   }
 
+  /**
+   * Sets the user's answer for the current question
+   * @param answer
+   */
   updateAnswer(answer: answerObj) {
     if (answer && typeof answer.id !== undefined) {
       this.questions[answer.id!].userAnswer = answer.answer;
-      console.log(this.questions);
     }
   }
 
@@ -71,11 +74,20 @@ export class AppComponent {
     }, []);
 
     let elements = document.getElementsByTagName("input");
+    let select = <HTMLInputElement>document.getElementById("inputColor");
+    let textArea = <HTMLInputElement>document.getElementById("challengeText");
+    let challengeBox = <HTMLInputElement>document.getElementById("challengeCheck");
+
+    select.value = '';
+    textArea.value = '';
+    challengeBox.checked = false;
 
     // Clear all radio buttons. TODO: Hook up checked values to read data.
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].type == 'radio') {
         elements[i].checked = false;
+      } else {
+        elements[i].value = '';
       }
     }
 

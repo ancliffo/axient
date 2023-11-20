@@ -1,4 +1,4 @@
-<article id="app-wrapper" class="container-fluid">
+<article id="app-wrapper" class="container-fluid" [style.height]="leafResult && !loading ? 'initial' : '100%'">
   <app-header></app-header>
   <app-questions
     [loading]="loading"

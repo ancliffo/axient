@@ -12,7 +12,7 @@ export class ButtonComponent {
   @Output() handleButtonClick: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
-    console.log('[Button]', this.btnState);
+    // console.log('[Button]', this.btnState);
   }
 
   onClick() {

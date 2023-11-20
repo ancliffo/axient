@@ -4,4 +4,16 @@
   grid-template-areas: "header" "questions" "footer";
   width: 100%;
   height: 100%;
+
+  app-header {
+    grid-area: header;
+  }
+
+  app-questions {
+    grid-area: questions;
+  }
+
+  app-footer {
+    grid-area: footer;
+  }
 }

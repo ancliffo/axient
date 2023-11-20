@@ -18,7 +18,7 @@ export class QuestionsComponent {
   @Input() loading: boolean = false;
 
   ngOnInit(): void {
-    console.log('[QUESTIONS Child]', this.questions);
+    // console.log('[QUESTIONS Child]', this.questions);
   }
 
   handleUpdateAnswer(e: answerObj) {
