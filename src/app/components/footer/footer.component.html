@@ -1,0 +1,23 @@
+<footer>
+  <app-button  [style.display]="currentQuestion !== 0 && leafResult === null ? 'block' : 'none'"
+    label="Prev" bsClass="secondary prev"
+    (handleButtonClick)="prevQuestion()">
+  </app-button>
+  <app-button [style.display]="currentQuestion === 0 && leafResult === null ? 'block' : 'none'"
+    label="GET STARTED" bsClass="success"
+    (handleButtonClick)="nextQuestion()">
+  </app-button>
+  <app-button [style.display]="currentQuestion !== 0 && leafResult === null  ? 'block' : 'none'"
+    label="Next" bsClass="success next"
+    btnState="{{questions[currentQuestion].userAnswer ? 'answered' : 'disabled'}}"
+    (handleButtonClick)="nextQuestion()">
+  </app-button>
+  <app-button [style.display]="leafResult ? 'block' : 'none'"
+    label="Restart" bsClass="secondary"
+    (handleButtonClick)="restart()">
+  </app-button>
+  <app-button [style.display]="leafResult ? 'block' : 'none'"
+    label="SUBMIT" bsClass="success"
+    (handleButtonClick)="submit()">
+  </app-button>
+</footer>

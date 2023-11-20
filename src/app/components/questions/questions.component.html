@@ -1,0 +1,9 @@
+<main id="questions">
+  <app-question [style.display]="leafResult || loading ? 'none' : 'block'"
+    *ngFor="let question of questions" [question]="question"
+    [currentQuestion]="currentQuestion"
+    (updateAnswer)="handleUpdateAnswer($event)"></app-question>
+  <app-result [style.display]="!leafResult || loading ? 'none' : 'block'" [leafResult]="leafResult"></app-result>
+  <div [style.display]="loading ? 'block' : 'none'" class="spinner-border text-success" role="status">
+  </div>
+</main>

@@ -1,0 +1,50 @@
+@import "../../../variables";
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding-top: .5rem;
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    img:nth-child(1) {
+      max-width: 75%;
+      max-height: 48px;
+      padding-right: 10px;
+      padding-left: 5px;
+      margin-top: -5px;
+    }
+
+    img:nth-child(2) {
+      max-width: 25%;
+    }
+  }
+
+  .subtitle-wrapper {
+    margin-top: -8px;
+    background-color: $leafGreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid $borderColor;
+    border-bottom: 3px solid $borderColor;
+
+    img {
+      height: 58px;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: $white;
+      margin: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+}

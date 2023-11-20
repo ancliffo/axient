@@ -1,0 +1,114 @@
+@import "../../../variables";
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  border-bottom: 3px solid $borderColor;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  p {
+    strong {
+      text-transform: uppercase;
+    }
+  }
+
+  img {
+    width: 90%;
+    max-width: 275px;
+    margin: auto;
+  }
+}
+
+.result-form {
+  p {
+    font-size: 1rem;
+  }
+}
+
+.leaf {
+  width: 40px;
+  position: fixed;
+  z-index: 1;
+}
+
+.leaf:nth-child(1) {
+  bottom: 5%;
+  left: -12%;
+  animation: blowing 3s 1s linear;
+}
+
+.leaf:nth-child(2) {
+  bottom: 10vh;
+  left: -12%;
+  animation: blowing 5s linear;
+}
+
+.leaf:nth-child(3) {
+  bottom: 10%;
+  left: -12%;
+  animation: blowing 4s 3s linear;
+}
+
+.leaf:nth-child(4) {
+  bottom: 15%;
+  left: -12%;
+  animation: blowing2 2s 4s linear;
+}
+
+.leaf:nth-child(5) {
+  bottom: 15%;
+  left: -12%;
+  animation: blowing2 4s 4s linear;
+}
+
+.leaf:nth-child(6) {
+  bottom: 15%;
+  left: -12%;
+  animation: blowing2 5s linear;
+}
+
+@keyframes blowing {
+  0% {
+    transform: translate(0,0) rotate(0)
+  }
+  20% {
+    transform: translate(15vw, -10vh) rotate(170deg)
+  }
+  40% {
+    transform: translate(40vw, -15vh) rotate(220deg)
+  }
+  65% {
+    transform: translate(55vw, -20vh) rotate(550deg)
+  }
+  80% {
+    transform: translate(70vw, -28vh) rotate(740deg)
+  }
+  100% {
+    transform: translate(120vw, -35vh) rotate(920deg)
+  }
+}
+
+@keyframes blowing2 {
+  0% {
+    transform: translate(0,0) rotate(0)
+  }
+  20% {
+    transform: translate(12vw, -1vh) rotate(100deg)
+  }
+  40% {
+    transform: translate(50vw, -12vh) rotate(90deg)
+  }
+  65% {
+    transform: translate(65vw, -40vh) rotate(290deg)
+  }
+  80% {
+    transform: translate(90vw, -43vh) rotate(540deg)
+  }
+  100% {
+    transform: translate(120vw, -50vh) rotate(320deg)
+  }
+}

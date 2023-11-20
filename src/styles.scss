@@ -1,0 +1,94 @@
+@import 'src/variables';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 1.25rem;
+}
+
+// Bootstrap Overrides
+.btn-success {
+  padding: 10px 40px;
+  background-color: $leafGreen;
+  border-color: $leafGreen;
+
+  &.next {
+    padding: 10px 50px 10px 30px;
+    position: relative;
+
+    &:after {
+      content: url("assets/icons/leaf_color_checkmark.svg");
+      position: absolute;
+      right: -11px;
+      width: 50px;
+      top: -4px;
+    }
+
+    &.disabled {
+      background-color: $borderColor;
+      border-color: $borderColor;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.btn-secondary {
+  padding: 10px 40px;
+  background-color: $darkGrey;
+  border-color: $darkGrey;
+  position: relative;
+
+  &.prev {
+    &:before {
+      content: url("assets/icons/blackcaratwhiteborder.svg");
+      position: absolute;
+      transform: rotate(180deg);
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 15px;
+      height: 24px;
+      left: 13px;
+    }
+  }
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  & + i {
+    cursor: pointer;
+    background-image: url("assets/icons/radiobutton_off.svg");
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &:checked + i {
+    background-image: url("assets/icons/radiobutton_on.svg");
+  }
+
+  &:focus ~ span {
+    text-decoration: underline;
+  }
+}
+// End Bootstrap Overrides
+
+#app-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 800px) {
+    margin-top: 30px;
+    box-shadow: 0 0 3px forestgreen;
+    border-radius: 8px;
+  }
+}
