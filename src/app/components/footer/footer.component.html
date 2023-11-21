@@ -1,23 +1,23 @@
-<footer>
-  <app-button [style.display]="currentQuestion !== 0 && leafResult === null ? 'block' : 'none'"
-    label="Prev" bsClass="secondary prev"
-    (handleButtonClick)="prevQuestion()">
-  </app-button>
+<footer class="row">
   <app-button [style.display]="currentQuestion === 0 && leafResult === null ? 'block' : 'none'"
-    label="GET STARTED" bsClass="success"
+    label="GET STARTED" bsClass="success d-block mx-auto" class="col-12"
     (handleButtonClick)="nextQuestion()">
   </app-button>
+  <app-button [style.display]="currentQuestion !== 0 && leafResult === null ? 'block' : 'none'"
+    label="Prev" bsClass="secondary prev w-100" class="col-6"
+    (handleButtonClick)="prevQuestion()">
+  </app-button>
   <app-button [style.display]="currentQuestion !== 0 && leafResult === null  ? 'block' : 'none'"
-    label="Next" bsClass="success next"
+    label="Next" bsClass="success next w-100" class="col-6"
     btnState="{{questions[currentQuestion].userAnswer ? 'answered' : 'disabled'}}"
     (handleButtonClick)="nextQuestion()">
   </app-button>
   <app-button [style.display]="leafResult ? 'block' : 'none'"
-    label="Restart" bsClass="secondary"
+    label="Restart" bsClass="secondary w-100" class="col-6"
     (handleButtonClick)="restart()">
   </app-button>
   <app-button [style.display]="leafResult ? 'block' : 'none'"
-    label="SUBMIT" bsClass="success {{ loading || submitted ? 'disabled' : '' }}"
+    label="SUBMIT" class="col-6" bsClass="success w-100 {{ loading || submitted ? 'disabled' : '' }}"
     (handleButtonClick)="submit()">
   </app-button>
 </footer>

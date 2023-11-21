@@ -29,9 +29,9 @@ html, body {
     &:after {
       content: url("assets/icons/leaf_color_checkmark.svg");
       position: absolute;
-      right: -11px;
-      width: 50px;
-      top: -4px;
+      right: -7px;
+      width: 53px;
+      top: -3px;
     }
 
     &.disabled:after {
@@ -56,7 +56,7 @@ html, body {
       margin: auto;
       width: 15px;
       height: 24px;
-      left: 13px;
+      left: 22px;
     }
   }
 }
