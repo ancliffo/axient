@@ -13,7 +13,7 @@ export class AppComponent {
   currentQuestion: number = 0;
   leafResult: string | null = null;
   loading: boolean = false;
-  title: string = 'Main Parent Component';
+  submitted: boolean = false;
   ngOnInit(): void {
     // console.log('[QUESTIONS Parent]', this.questions);
   }
@@ -94,5 +94,10 @@ export class AppComponent {
     this.leafResult = null;
     this.currentQuestion = 0;
     this.questions = clearedQuestions;
+    this.submitted = false;
+  }
+
+  submit() {
+    this.submitted = true;
   }
 }

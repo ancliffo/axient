@@ -7,6 +7,7 @@ import {Component, Input, SimpleChange} from '@angular/core';
 })
 export class ResultComponent {
   @Input() leafResult: string | null = null;
+  @Input() submitted: boolean = false;
   showChallengeInput: boolean = false;
 
   // Hide the textarea if the leafResult has been cleared out

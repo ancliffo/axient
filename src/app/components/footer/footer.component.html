@@ -17,7 +17,7 @@
     (handleButtonClick)="restart()">
   </app-button>
   <app-button [style.display]="leafResult ? 'block' : 'none'"
-    label="SUBMIT" bsClass="success {{ loading ? 'disabled' : '' }}"
+    label="SUBMIT" bsClass="success {{ loading || submitted ? 'disabled' : '' }}"
     (handleButtonClick)="submit()">
   </app-button>
 </footer>

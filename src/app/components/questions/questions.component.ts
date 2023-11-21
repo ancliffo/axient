@@ -1,9 +1,6 @@
 import {Component, EventEmitter, Input, NgModule, Output} from '@angular/core';
 import {Questions} from "../../Questions";
 import {answerObj} from "../../answerObj";
-import {ResultComponent} from "../result/result.component";
-import {QuestionComponent} from "../question/question.component";
-import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-questions',
@@ -16,6 +13,7 @@ export class QuestionsComponent {
   @Input() leafResult: string | null = null;
   @Output() updateAnswer: EventEmitter<any> = new EventEmitter();
   @Input() loading: boolean = false;
+  @Input() submitted: boolean = false;
 
   ngOnInit(): void {
     // console.log('[QUESTIONS Child]', this.questions);

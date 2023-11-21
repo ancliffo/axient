@@ -2,17 +2,20 @@
   <app-header></app-header>
   <app-questions
     [loading]="loading"
+    [submitted]="submitted"
     [currentQuestion]="currentQuestion"
     [questions]="questions"
     [leafResult]="leafResult"
     (updateAnswer)="updateAnswer($event)"></app-questions>
   <app-footer
     [loading]="loading"
+    [submitted]="submitted"
     [currentQuestion]="currentQuestion"
     [questions]="questions"
     [leafResult]="leafResult"
     (onPrevQuestion)="prevQuestion(questions[currentQuestion])"
     (onNextQuestion)="nextQuestion(questions[currentQuestion])"
-    (onRestart)="restart()">
+    (onRestart)="restart()"
+    (onSubmit)="submit()">
   </app-footer>
 </article>

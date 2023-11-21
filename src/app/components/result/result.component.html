@@ -2,9 +2,9 @@
   <div class="results">
     <p class="mt-2 mb-0">Congratulations!</p>
     <img alt="{{ leafResult }} Leaf" src="assets/leaves/{{ leafResult ? leafResult.toLowerCase() : 'elm' }}.png" />
-    <p class="mt-0 mb-2">You found a{{ leafResult === 'Elm' || leafResult === 'oak' ? 'n' : '' }} <strong>{{ leafResult }} leaf!</strong></p>
+    <p class="mt-0 mb-2">You found a{{ leafResult === 'Elm' || leafResult === 'Oak' ? 'n' : '' }} <strong>{{ leafResult }} leaf!</strong></p>
   </div>
-  <div class="result-form">
+  <div class="result-form" [style.display]="submitted ? 'none' : 'block'">
     <p>Please answer as many of the following questions as you can about your leaf before submitting your observation:</p>
     <div class="form-row">
       <div class="form-group col-12 mb-2">
@@ -37,6 +37,9 @@
           class="form-control" id="challengeText" rows="3"></textarea>
       </div>
     </div>
+  </div>
+  <div class="result-form" [style.display]="submitted ? 'block' : 'none'">
+    <h2 class="text-center">Thank you for your submission!</h2>
   </div>
   <div>
     <img *ngFor="let number of [0,1,2,3,4,5]" class="leaf" src="assets/icons/leaf.png"/>
