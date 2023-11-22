@@ -2,7 +2,9 @@
   <app-question [style.display]="leafResult || loading ? 'none' : 'block'"
     *ngFor="let question of questions" [question]="question"
     [currentQuestion]="currentQuestion"
-    (updateAnswer)="handleUpdateAnswer($event)"></app-question>
+    (updateAnswer)="handleUpdateAnswer($event)"
+    [submitted]="submitted">
+  </app-question>
   <app-result [style.display]="!leafResult || loading ? 'none' : 'block'"
     [leafResult]="leafResult"
     [submitted]="submitted">

@@ -63,7 +63,7 @@ export class AppComponent {
   }
 
   /**
-   * Clears all of the user's answers and sets the questions back to the start screen
+   * Clears the user's answers and sets the questions back to the start screen
    */
   restart() {
     let clearedQuestions = this.questions.reduce((prev: Questions[], cur: Questions) => {
@@ -72,24 +72,6 @@ export class AppComponent {
 
       return prev;
     }, []);
-
-    let elements = document.getElementsByTagName("input");
-    let select = <HTMLInputElement>document.getElementById("inputColor");
-    let textArea = <HTMLInputElement>document.getElementById("challengeText");
-    let challengeBox = <HTMLInputElement>document.getElementById("challengeCheck");
-
-    select.value = '';
-    textArea.value = '';
-    challengeBox.checked = false;
-
-    // Clear all radio buttons. TODO: Hook up checked values to read data.
-    for (let i = 0; i < elements.length; i++) {
-      if (elements[i].type == 'radio') {
-        elements[i].checked = false;
-      } else {
-        elements[i].value = '';
-      }
-    }
 
     this.leafResult = null;
     this.currentQuestion = 0;

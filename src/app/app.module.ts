@@ -9,6 +9,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResultComponent } from './components/result/result.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

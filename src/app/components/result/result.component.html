@@ -4,12 +4,12 @@
     <img alt="{{ leafResult }} Leaf" src="assets/leaves/{{ leafResult ? leafResult.toLowerCase() : 'elm' }}.png" />
     <p class="mt-0 mb-2">You found a{{ leafResult === 'Elm' || leafResult === 'Oak' ? 'n' : '' }} <strong>{{ leafResult }} leaf!</strong></p>
   </div>
-  <div class="result-form" [style.display]="submitted ? 'none' : 'block'">
+  <form name="resultForm" #resultForm="ngForm" class="result-form" [style.display]="submitted ? 'none' : 'block'">
     <p>Please answer as many of the following questions as you can about your leaf before submitting your observation:</p>
     <div class="form-row">
       <div class="form-group col-12 mb-2">
         <label for="inputColor">Color:</label>
-        <select id="inputColor" class="form-control">
+        <select id="inputColor" class="form-control" name="inputColor" [(ngModel)]="model.inputColor">
           <option value=""></option>
           <option>Green</option>
           <option>Yellow</option>
@@ -20,24 +20,25 @@
       </div>
       <div class="form-group col-12 mb-2">
         <label for="inputLength">Centimeters in length:</label>
-        <input type="number" class="form-control" id="inputLength" min="0">
+        <input type="number" class="form-control" id="inputLength" min="0" name="inputLength" [(ngModel)]="model.inputLength">
       </div>
       <div class="form-group col 12 mb-2">
         <div class="form-check">
           <label class="form-check-label" for="challengeCheck" title="Check this if you think {{ leafResult }} is not the type of leaf you found.">
             Challenge result
           </label>
-          <input class="form-check-input" type="checkbox" id="challengeCheck" (change)="toggleTextArea($event)">
+          <input class="form-check-input" type="checkbox" id="challengeCheck"
+            (change)="toggleTextArea($event)" name="challengeCheck" [(ngModel)]="model.challengeCheck">
         </div>
       </div>
       <div class="form-group col-12 challenge-textarea {{ showChallengeInput ? 'open' : 'close' }}">
         <label for="challengeText">Describe your leaf in further detail:</label>
-        <textarea
-          placeholder="Tell us why you think your leaf is not a{{ leafResult === 'Elm' || leafResult === 'oak' ? 'n' : '' }} {{ leafResult }} leaf."
+        <textarea name="challengeText" [(ngModel)]="model.challengeText"
+          placeholder="Tell us why you think your leaf is not a{{ leafResult === 'Elm' || leafResult === 'Oak' ? 'n' : '' }} {{ leafResult }} leaf."
           class="form-control" id="challengeText" rows="3"></textarea>
       </div>
     </div>
-  </div>
+  </form>
   <div class="result-form" [style.display]="submitted ? 'block' : 'none'">
     <h2 class="text-center">Thank you for your submission!</h2>
   </div>

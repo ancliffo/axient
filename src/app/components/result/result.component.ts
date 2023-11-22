@@ -1,4 +1,5 @@
 import {Component, Input, SimpleChange} from '@angular/core';
+import {Results} from "../../Results";
 
 @Component({
   selector: 'app-result',
@@ -8,12 +9,20 @@ import {Component, Input, SimpleChange} from '@angular/core';
 export class ResultComponent {
   @Input() leafResult: string | null = null;
   @Input() submitted: boolean = false;
+  model = new Results('', null, false, '');
   showChallengeInput: boolean = false;
 
-  // Hide the textarea if the leafResult has been cleared out
+  /**
+   * Clear form and Hide the textarea if the leafResult has been cleared out
+   * @param changes
+   */
   ngOnChanges(changes: SimpleChange) {
     if (this.leafResult === null) {
       this.showChallengeInput = false;
+      this.model.inputColor = '';
+      this.model.inputLength = null;
+      this.model.challengeCheck = false;
+      this.model.challengeText = '';
     }
   }
 

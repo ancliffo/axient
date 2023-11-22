@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, SimpleChange} from '@angular/core';
 import {Questions} from "../../Questions";
 
 @Component({
@@ -10,7 +10,9 @@ export class QuestionComponent {
   @Input() question: Questions;
   @Input() currentQuestion: number;
   @Output() updateAnswer: EventEmitter<any> = new EventEmitter();
+  @Input() submitted: boolean = false;
   questionOptions: any;
+  questionInput: null;
 
   constructor() {
     this.question = {
@@ -22,13 +24,24 @@ export class QuestionComponent {
     }
     this.currentQuestion = 0;
     this.questionOptions = [];
+    this.questionInput = null;
   }
 
   ngOnInit(): void {
     this.questionOptions = Object.values(this.question.options);
   }
 
+  /**
+   * Clear all radio buttons once leaf is submitted
+   * @param changes
+   */
+  ngOnChanges(changes: SimpleChange) {
+    if (this.submitted) {
+      this.questionInput = null;
+    }
+  }
+
   onUpdateAnswer(e: any) {
-    this.updateAnswer.emit({id: this.question.id, answer: e.target.value});
+    this.updateAnswer.emit({id: this.question.id, answer: e.target.id.toLowerCase()});
   }
 }
