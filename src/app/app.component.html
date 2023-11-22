@@ -1,4 +1,4 @@
-<article id="app-wrapper" class="container-fluid" [style.height]="leafResult && !loading ? 'initial' : '100%'">
+<div id="app-wrapper" class="container-fluid" [style.height]="leafResult && !loading ? 'initial' : '100%'">
   <app-header></app-header>
   <app-questions
     [loading]="loading"
@@ -18,4 +18,4 @@
     (onRestart)="restart()"
     (onSubmit)="submit()">
   </app-footer>
-</article>
+</div>
