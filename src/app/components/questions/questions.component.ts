@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, NgModule, Output} from '@angular/core';
 import {Questions} from "../../Questions";
 import {answerObj} from "../../answerObj";
+import {QuestionService} from "../../services/question-service";
 
 @Component({
   selector: 'app-questions',
@@ -8,8 +9,9 @@ import {answerObj} from "../../answerObj";
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent {
-  @Input() questions: Questions[] = [];
-  @Input() currentQuestion: number = 0;
+  constructor(private _questionService: QuestionService) {}
+  @Input() questions: Questions[] | null = this._questionService.getQuestions();
+  @Input() currentQuestion: number = this._questionService.getQuestionNumber();
   @Input() leafResult: string | null = null;
   @Output() updateAnswer: EventEmitter<any> = new EventEmitter();
   @Input() loading: boolean = false;

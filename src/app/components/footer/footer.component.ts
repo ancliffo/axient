@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Questions} from "../../Questions";
+import { QuestionService } from "../../services/question-service";
 
 @Component({
   selector: 'app-footer',
@@ -19,7 +20,7 @@ export class FooterComponent {
   @Output() btnClick = new EventEmitter();
   @Input() leafResult: string | null = null;
 
-  constructor() {
+  constructor(private _questionService: QuestionService) {
     this.currentQuestion = 0;
   }
 
@@ -28,7 +29,8 @@ export class FooterComponent {
   }
 
   prevQuestion() {
-    this.onPrevQuestion.emit();
+    // this.onPrevQuestion.emit();
+    this._questionService.prevQuestion();
   }
 
   restart() {

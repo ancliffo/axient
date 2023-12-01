@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
 import { FormsModule } from "@angular/forms";
+import { QuestionService } from "./services/question-service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FormsModule } from "@angular/forms";
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

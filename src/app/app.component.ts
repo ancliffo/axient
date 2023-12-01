@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Questions} from "./Questions";
 import {QUESTIONS} from "./mock-questions";
 import {answerObj} from "./answerObj";
+import {QuestionService} from "./services/question-service";
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,12 @@ export class AppComponent {
   leafResult: string | null = null;
   loading: boolean = false;
   submitted: boolean = false;
+
+  constructor(private _questionService: QuestionService) {}
+
   ngOnInit(): void {
     // console.log('[QUESTIONS Parent]', this.questions);
+    this._questionService.setQuestions(this.questions)
   }
 
   /**
